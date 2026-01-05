@@ -14,9 +14,9 @@ def dibujar_texto(pantalla, texto, tamano, color, y_offset=0):
 # === MENÚ PRINCIPAL ===
 def menu_principal():
     pantalla = pygame.display.set_mode((800, 600))
-    pygame.display.set_caption('Menú Principal - Control por Gestos')
+    pygame.display.set_caption('Menú Principal')
     
-    opciones = ["1. Snake (Gusanito)", "2. Tank Shooter", "3. Carrera Infinita", "4. Salir"]
+    opciones = ["1. Snake ", "2. Tank Shooter", "3. Carrera Infinita", "4. Salir"]
     seleccion = 0
     
     while True:
@@ -38,9 +38,9 @@ def menu_principal():
                         sys.exit()
 
         pantalla.fill((10, 10, 40))
-        dibujar_texto(pantalla, "CONTROL DE VIDEOJUEGOS POR GESTOS", 70, (0, 255, 255), -150)
-        dibujar_texto(pantalla, "CARRILLO VILLALTA GUSTAVO - 20230484", 40, (200, 200, 200), -80)
-        dibujar_texto(pantalla, "Usa W/S o ↑↓ para seleccionar - ENTER para jugar", 35, (180, 180, 180), -20)
+        dibujar_texto(pantalla, "VIDEOJUEGOS POR GESTOS", 70, (0, 255, 255), -150)
+        dibujar_texto(pantalla, "realizado por : CARRILLO VILLALTA GUSTAVO", 40, (200, 200, 200), -80)
+        dibujar_texto(pantalla, "Usa W/S para seleccionar - ENTER para jugar", 35, (180, 180, 180), -20)
 
         for i, opcion in enumerate(opciones):
             color = (255, 255, 0) if i == seleccion else (255, 255, 255)
@@ -49,7 +49,7 @@ def menu_principal():
         pygame.display.flip()
         pygame.time.Clock().tick(30)
 
-# === JUEGO SNAKE (adaptado) ===
+# === JUEGO SNAKE ===
 def jugar_snake():
     WIDTH, HEIGHT = 600, 600
     pantalla = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -116,7 +116,7 @@ def jugar_snake():
                     if event.key == pygame.K_m: return 'menu'
                     if event.key == pygame.K_ESCAPE: return 'salir'
 
-# === JUEGO TANK SHOOTER (adaptado) ===
+# === JUEGO TANK SHOOTER ===
 def jugar_tanque():
     ANCHO, ALTO = 800, 600
     pantalla = pygame.display.set_mode((ANCHO, ALTO))
@@ -197,7 +197,7 @@ def jugar_tanque():
                     if event.key == pygame.K_m: return 'menu'
                     if event.key == pygame.K_ESCAPE: return 'salir'
 
-# === JUEGO CARRERA (adaptado) ===
+# === JUEGO CARRERA ===
 def jugar_carrera():
     ANCHO, ALTO = 500, 700
     pantalla = pygame.display.set_mode((ANCHO, ALTO))
